@@ -562,7 +562,7 @@ class StreamWrapper extends Base implements StreamWrapperIface
 			if (!self::mkdir(Vfs::dirname($path), $mode, $options)) return false;
 		}
 		// unset it now, as it was handled above
-		if (strpos($url, 'smb://') === 0)
+		if (strpos($url, 'smb://') === 0 || strpos($url, 'webdavs://') === 0 )
 		{
 			$options = 0;	// smbclient php extension treats every bit as recursive
 		}
